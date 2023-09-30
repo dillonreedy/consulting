@@ -20,7 +20,11 @@ const NavBar: React.FC = () => {
   return (
     <AppBar position="static" sx={{ width: '100%', backgroundColor: 'white' }}>
       <Toolbar>
-        <Avatar src="../../assets/logo.png" alt="DR" />
+        <Avatar
+          src="../../assets/logo.png"
+          alt="DR"
+          onClick={() => navigate('/')}
+        />
         <Box flexGrow={1} />
         <MenuItem
           sx={{
@@ -34,36 +38,12 @@ const NavBar: React.FC = () => {
         >
           About
         </MenuItem>
-        <IconButton
-          edge="end"
-          color="inherit"
-          aria-label="menu"
-          aria-controls="simple-menu"
-          aria-haspopup="true"
-          onClick={handleMenuOpen}
+        <MenuItem
+          sx={{ textDecoration: 'underline', color: '#000000' }}
+          onClick={() => navigate('/services')}
         >
-          <MenuIcon />
-        </IconButton>
-        <Menu
-          id="simple-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleMenuClose}
-        >
-          <MenuItem
-            sx={{ textDecoration: 'underline', color: '#000000' }}
-            onClick={() => navigate('/about')}
-          >
-            About
-          </MenuItem>
-          <MenuItem
-            sx={{ textDecoration: 'underline', color: '#000000' }}
-            onClick={() => navigate('/services')}
-          >
-            Services
-          </MenuItem>
-        </Menu>
+          Services
+        </MenuItem>
       </Toolbar>
     </AppBar>
   );

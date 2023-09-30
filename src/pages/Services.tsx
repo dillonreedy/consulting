@@ -1,5 +1,12 @@
+import NavBar from '../components/NavBar';
+
 const Services: React.FC = () => {
-  return <h1>Services Page</h1>;
+  return (
+    <>
+      <NavBar />
+      <h1>Services Page</h1>
+    </>
+  );
 };
 
 export default Services;
