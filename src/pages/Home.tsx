@@ -1,28 +1,23 @@
-import { Box, Grid, Paper } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import NavBar from '../components/NavBar';
 
 const Home: React.FC = () => {
+  const text = 'EXPERT.\nINNOVATOR.\nCOLLABORATOR.\nDEVELOPER.';
   return (
     <Box sx={{ backgroundColor: 'black', height: '100%' }}>
       <NavBar />
-
-      <Grid container justifyContent="center">
-        <Grid
-          item
-          xs={12}
-          sm={6}
-          style={{ display: 'flex', alignItems: 'center' }}
-        >
-          <Paper elevation={3}>
-            <img
-              src="https://raw.githubusercontent.com/dillonreedy/consulting/main/src/assets/profile.jpg"
-              alt="Image Preview"
-              style={{ width: '100%' }}
-            />
-          </Paper>
+      <Grid container>
+        <Grid item md={6} lg={4}>
+          <img
+            src="https://raw.githubusercontent.com/dillonreedy/consulting/main/src/assets/profile.jpg"
+            alt="Dillon Reedy"
+            style={{ maxHeight: '800px' }}
+          />
         </Grid>
-        <Grid item xs={12} sm={6}>
-          {/* Your content for the right side */}
+        <Grid item sm={6} md={6} lg={8}>
+          <Typography sx={{ color: 'white', whiteSpace: 'pre-line' }}>
+            {text}
+          </Typography>
         </Grid>
       </Grid>
     </Box>
